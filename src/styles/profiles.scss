@@ -1,0 +1,71 @@
+#profile{
+    width: 100%;
+    padding: $p;
+    background-color: $color4;
+    color: $color5;
+    >h2{
+        font: 700 2.5rem $text2;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    >section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin: auto;
+        height: 35rem;
+        padding: 8rem;
+        background-color: $color3;
+        gap: 20px;
+        >article{
+            height: 100%;
+            width: 30%;
+            background-color: $color4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            img{
+                top: 0;
+                margin-bottom: 2rem;
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
+                border-radius: 50%;
+                transform: translateY(-50%);
+            }
+            p{
+                letter-spacing: 2px;
+                margin: 20px 0;
+                font-size: 0.9rem;
+                line-height: 150%;
+                text-align: center;
+                overflow: hidden;
+            }
+            h4{
+                margin-bottom: 1rem;
+            }
+            a{
+                text-decoration: none;
+                >button{
+                    border: 1px solid $color6_1;
+                    padding: 0.5rem 2rem;
+                    background-color: $color1;
+                    cursor: pointer;
+                    color: $color6;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    transition: all 0.3s;
+                    &:hover{
+                        background-color: $color6;
+                        color: $color4;
+                    };
+                }
+            }
+        }
+    }
+}
