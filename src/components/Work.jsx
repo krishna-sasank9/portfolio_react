@@ -9,13 +9,12 @@ function Work() {
         <section>
             <article>
                 <Carousel
-                showArrows={false}
+                showArrows={true}
                 showStatus={false}
-                showIndicators={false}
+                showIndicators={true}
                 showThumbs={false}
-                interval={2000}
-                infiniteLoop={true}
-                autoPlay={true}
+                infiniteLoop={false}
+                autoPlay={false}
                 >
                     {
                         data.projects.map(i=>(

@@ -5,8 +5,8 @@ function Profiles() {
     <div id="profile">
         <h2>Profiles</h2>
         <section>
-            <Card1 name={"Leetcode"} feedback={"Solved 450+ problems!"} url={"https://leetcode.com/K_sasank_9913/"}/>
-            <Card2 name={"Codechef"} feedback={"Solved 250+ problems!"} url={"https://www.codechef.com/users/lucky_952004"}/>
+            <Card1 name={"Leetcode"} feedback={"Solved 600+ problems!"} url={"https://leetcode.com/K_sasank_9913/"}/>
+            <Card2 name={"Codechef"} feedback={"Solved 300+ problems!"} url={"https://www.codechef.com/users/lucky_952004"}/>
             <Card3 name={"Github"} feedback={"View my projects here!"} url={"https://github.com/krishna-sasank9"}/>
         </section>
     </div>
