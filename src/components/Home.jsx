@@ -53,7 +53,7 @@ function Home({ratio}) {
             </p>
           </div>
           <div>
-            <a href="mailto:krishnatss999@gmail.com">My CV.</a>
+            <a target="_blank" href="https://drive.google.com/file/d/11j-YjSvFq6ESObCak6hd9_creWRwNbFQ/view?usp=sharing">My CV.</a>
             <a href="#work">
               Projects
               <BsArrowUpRight />
