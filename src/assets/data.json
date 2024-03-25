@@ -2,17 +2,17 @@
   "projects": [
     {
       "date": "15/5/2023",
-      "title": "AirBnb Clone(MERN)",
-      "description": "It is a website similar to Airbnb , User can view various places and add the places for bookings and add new places as accomodations. ",
-      "url": "https://github.com/krishna-sasank9/Airbnb-Clone-MERN",
-      "imgSrc": "https://cdn.freebiesupply.com/images/large/2x/airbnb-logo.png"
-    },
-    {
-      "date": "15/5/2023",
       "title": "Helping_Hands",
       "description": "Helping hands acts as an interface between the people who can help and  those in need of assistance.",
       "url": "https://github.com/krishna-sasank9/Helping_hands-Project",
       "imgSrc": "https://t3.ftcdn.net/jpg/02/06/96/52/360_F_206965208_aWSMq6EqwOi2w2W9sSJb5zdqwJ0rNnDo.jpg"
+    },
+    {
+      "date": "15/5/2023",
+      "title": "AirBnb Clone(MERN)",
+      "description": "It is a website similar to Airbnb , User can view various places and add the places for bookings and add new places as accomodations. ",
+      "url": "https://github.com/krishna-sasank9/Airbnb-Clone-MERN",
+      "imgSrc": "https://cdn.freebiesupply.com/images/large/2x/airbnb-logo.png"
     },
     {
       "date": "15/09/2023",

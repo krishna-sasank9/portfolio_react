@@ -53,7 +53,7 @@ function Home({ratio}) {
             </p>
           </div>
           <div>
-            <a target="_blank" href="https://drive.google.com/file/d/11j-YjSvFq6ESObCak6hd9_creWRwNbFQ/view?usp=sharing">My CV.</a>
+            <a target="blank" href="https://drive.google.com/file/d/1giiE8GM-PUmjLQiQMH1emE5I8tjbaxkB/view?usp=sharing">My CV.</a>
             <a href="#work">
               Projects
               <BsArrowUpRight />
