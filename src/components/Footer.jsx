@@ -1,26 +1,54 @@
-import React from 'react'
-import flogo from '../assets/flogo.jpg'
-import {BsLinkedin,BsInstagram,BsGithub} from 'react-icons/bs'
-import {AiOutlineArrowUp,} from 'react-icons/ai'
-function Footer() {
+import { FiArrowUp, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi'
+import { profile } from '../data/profile'
+
+export default function Footer() {
   return (
-    <footer>
+    <footer className="footer">
+      <div className="footer__inner">
         <div>
-            <img src={flogo} alt="my"/>
-            <h2>Krishna Sasank TSS</h2>
-            <h5>© 2023 T S S Krishna Sasank-Portolio. All rights reserved.</h5>
+          <p className="footer__name">{profile.shortName}.</p>
+          <p className="footer__note">
+            Designed &amp; built with React and far too much coffee.
+          </p>
         </div>
-        <aside>
-            <h2>Social Media</h2>
-            <article>
-                <a href="https://www.linkedin.com/in/krishna-sasank-5212a5256/" target='blank'> <BsLinkedin/> </a>
-                <a href='https://github.com/krishna-sasank9' target='blank'><BsGithub/></a>
-                <a href='https://www.instagram.com/krishna_sasank_9/' target='blank'><BsInstagram/></a>
-            </article>
-        </aside>
-        <a href='#home'><AiOutlineArrowUp/></a>
+
+        <div className="footer__socials">
+          <a
+            href={profile.socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <FiGithub />
+          </a>
+          <a
+            href={profile.socials.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <FiLinkedin />
+          </a>
+          <a
+            href={profile.socials.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram profile"
+          >
+            <FiInstagram />
+          </a>
+        </div>
+      </div>
+
+      <div className="footer__bar">
+        {/* Derived, so this never goes stale again. */}
+        <p>
+          © {new Date().getFullYear()} {profile.name}. All rights reserved.
+        </p>
+        <a href="#hero" className="footer__top" aria-label="Back to top">
+          Back to top <FiArrowUp />
+        </a>
+      </div>
     </footer>
   )
 }
-
-export default Footer

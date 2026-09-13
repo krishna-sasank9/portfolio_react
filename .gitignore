@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+/dist
 
 # misc
 .DS_Store
@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 .vercel
+
+# local env
+.env.local
+.env
+
+# original photo exports (not bundled)
+photos-source/

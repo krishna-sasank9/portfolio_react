@@ -1,0 +1,70 @@
+/* Design tokens. Everything themeable is a CSS custom property so the theme
+   toggle is a single attribute flip on <html> with no JS re-render. */
+
+:root {
+  /* Brand accents — evolved from the original palette (#f26440 / #286f6c). */
+  --accent: #ff6a3d;
+  --accent-soft: #ff8f6b;
+  --accent-2: #2dd4bf;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Fluid type scale — no media queries needed for typography. */
+  --step--1: clamp(0.83rem, 0.79rem + 0.18vw, 0.94rem);
+  --step-0: clamp(1rem, 0.95rem + 0.24vw, 1.13rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.5rem);
+  --step-2: clamp(1.44rem, 1.31rem + 0.65vw, 2rem);
+  --step-3: clamp(1.73rem, 1.52rem + 1.03vw, 2.66rem);
+  --step-4: clamp(2.07rem, 1.75rem + 1.6vw, 3.55rem);
+  --step-5: clamp(2.49rem, 1.99rem + 2.44vw, 4.73rem);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: clamp(4rem, 10vw, 8rem);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --content: 1140px;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme='dark'] {
+  --bg: #0a0a0c;
+  --bg-elevated: #131317;
+  --surface: #16161b;
+  --surface-hover: #1d1d23;
+  --border: #26262e;
+  --border-strong: #35353f;
+  --text: #ededf2;
+  --text-muted: #9a9aa8;
+  --text-faint: #6c6c7a;
+  --shadow: 0 18px 50px -18px rgb(0 0 0 / 0.8);
+  --glow: radial-gradient(
+    60% 60% at 50% 0%,
+    color-mix(in srgb, var(--accent) 22%, transparent),
+    transparent 70%
+  );
+}
+
+:root[data-theme='light'] {
+  --bg: #fbfbfd;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f4f4f7;
+  --border: #e4e4ec;
+  --border-strong: #d0d0dc;
+  --text: #14141a;
+  --text-muted: #5c5c6c;
+  --text-faint: #8b8b9a;
+  --shadow: 0 18px 44px -20px rgb(15 15 30 / 0.22);
+  --glow: radial-gradient(
+    60% 60% at 50% 0%,
+    color-mix(in srgb, var(--accent) 14%, transparent),
+    transparent 70%
+  );
+}
