@@ -1,73 +1,41 @@
-import React from 'react'
-import {motion} from 'framer-motion'
-import {AiFillHtml5,AiFillGithub,} from 'react-icons/ai'
-import {BsFiletypeCss,BsGit} from 'react-icons/bs'
-import {DiJavascript1,DiReact,DiJqueryLogo,DiNodejsSmall,DiMongodb,} from 'react-icons/di'
-function Skills() {
-    const animations = {
-        whileInView: {
-          x: 0,
-          y: 0,
-          opacity: 1,
-        },
-        one: {
-          opacity: 0,
-          x: "-100%",
-        },
-        two: {
-          opacity: 0,
-          y: "-100%",
-        },
-    
-        three: {
-          opacity: 0,
-          x: "100%",
-        },
-      };
+import { motion } from 'framer-motion'
+import { skillGroups } from '../data/skills'
+
+export default function Skills() {
   return (
-    <div id="skills">
-        <h2>Skills</h2>
-        <section>
-            <motion.div 
-            className='box1' 
-            whileInView={animations.whileInView}
-            initial={animations.one}
+    <section id="skills" className="section skills">
+      <div className="section__inner">
+        <p className="section__label">Toolkit</p>
+        <h2 className="section__title">Skills &amp; technologies</h2>
+        <p className="section__lead">
+          The tools I reach for most, grouped by where they sit in the stack.
+        </p>
+
+        <div className="skills__grid">
+          {skillGroups.map((group, i) => (
+            <motion.div
+              className="skill-card"
+              key={group.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h1>Frontend</h1>
-              <div>
-                <p><AiFillHtml5/> HTML</p>
-                <p><BsFiletypeCss/> CSS</p>
-                <p><DiJavascript1/> JavaScript</p>
-                <p><DiJqueryLogo/> Jquery</p>
-                <p><DiReact/> ReactJS</p>
-              </div>
+              <h3 className="skill-card__title">{group.title}</h3>
+              <p className="skill-card__blurb">{group.blurb}</p>
+
+              <ul className="skill-card__items">
+                {group.items.map(({ name, Icon }) => (
+                  <li key={name}>
+                    {Icon && <Icon aria-hidden="true" />}
+                    {name}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
-            <motion.div className='box2'
-            whileInView={animations.whileInView}
-            initial={animations.two}
-            >
-              <h1>Backend</h1>
-              <div>
-                <p><DiNodejsSmall/> NodeJS</p>
-                <p>ExpressJS</p>
-                <p><DiMongodb/> MongoDB</p>
-              </div>
-            </motion.div>
-            <motion.div className='box3'
-            whileInView={animations.whileInView}
-            initial={animations.three}
-            >
-              <h1>Others</h1>
-              <div>
-                <p><BsGit/> Git</p>
-                <p><AiFillGithub/>Github</p>
-                <p>Data Structures & Algorithm</p>
-                <p>Problem Solving</p>
-              </div>
-            </motion.div>
-        </section>
-    </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
-
-export default Skills

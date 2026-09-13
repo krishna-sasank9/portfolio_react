@@ -1,45 +1,58 @@
-import React from 'react'
+import { motion } from 'framer-motion'
+import { FiArrowUpRight } from 'react-icons/fi'
+import { SiCodechef, SiGithub, SiLeetcode } from 'react-icons/si'
+import { profiles } from '../data/profile'
 
-function Profiles() {
+// Local icons rather than hotlinked logos from third-party CDNs.
+const ICONS = {
+  LeetCode: SiLeetcode,
+  CodeChef: SiCodechef,
+  GitHub: SiGithub,
+}
+
+export default function Profiles() {
   return (
-    <div id="profile">
-        <h2>Profiles</h2>
-        <section>
-            <Card1 name={"Leetcode"} feedback={"Solved 600+ problems!"} url={"https://leetcode.com/K_sasank_9913/"}/>
-            <Card2 name={"Codechef"} feedback={"Solved 300+ problems!"} url={"https://www.codechef.com/users/lucky_952004"}/>
-            <Card3 name={"Github"} feedback={"View my projects here!"} url={"https://github.com/krishna-sasank9"}/>
-        </section>
-    </div>
+    <section id="profiles" className="section profiles">
+      <div className="section__inner">
+        <p className="section__label">Profiles</p>
+        <h2 className="section__title">Find me elsewhere</h2>
+        <p className="section__lead">
+          Competitive programming keeps my fundamentals sharp — here&rsquo;s the proof.
+        </p>
+
+        <div className="profiles__grid">
+          {profiles.map((item, i) => {
+            const Icon = ICONS[item.name]
+
+            return (
+              <motion.a
+                className="profile-card"
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 26 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="profile-card__top">
+                  {Icon && <Icon className="profile-card__icon" aria-hidden="true" />}
+                  <FiArrowUpRight className="profile-card__arrow" aria-hidden="true" />
+                </div>
+
+                <p className="profile-card__stat">{item.stat}</p>
+                <p className="profile-card__stat-label">{item.statLabel}</p>
+
+                <div className="profile-card__foot">
+                  <span className="profile-card__name">{item.name}</span>
+                  <span className="profile-card__handle">@{item.handle}</span>
+                </div>
+              </motion.a>
+            )
+          })}
+        </div>
+      </div>
+    </section>
   )
 }
-const Card1=({name,feedback,url})=>{
-    return(
-        <article>
-            <img src='https://user-images.githubusercontent.com/36547915/97088991-45da5d00-1652-11eb-900f-80d106540f4f.png' alt='LC'/>
-            <h4>{name}</h4>
-            <a href={url} target={"blank"}><button>View</button></a>
-            <p>{feedback}</p>
-        </article>
-    )
-}
-const Card2=({name,feedback,url})=>{
-    return(
-        <article>
-            <img src='https://images.crunchbase.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/zruiknbedz8yqafxbazb' alt='CC'/>
-            <h4>{name}</h4>
-            <a href={url} target={"blank"}><button>View</button></a>
-            <p>{feedback}</p>
-        </article>
-    )
-}
-const Card3=({name,feedback,url})=>{
-    return(
-        <article>
-            <img src='https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png' alt='GH'/>
-            <h4>{name}</h4>
-            <a href={url} target={"blank"}><button>View</button></a>
-            <p>{feedback}</p>
-        </article>
-    )
-}
-export default Profiles
