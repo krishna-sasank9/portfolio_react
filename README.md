@@ -2,7 +2,7 @@
 
 Personal portfolio built with **React 19**, **Vite** and **Sass**.
 
-🔗 **Live:** https://portfolio-react-ten-gules.vercel.app/
+🔗 **Live:** https://krishna-sasank.vercel.app/
 
 ## Stack
 
