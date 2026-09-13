@@ -30,3 +30,6 @@ yarn-error.log*
 
 # original photo exports (not bundled)
 photos-source/
+
+# local engineering/interview notes (not published)
+NOTES.md
